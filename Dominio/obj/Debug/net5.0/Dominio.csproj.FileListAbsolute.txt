@@ -1,0 +1,12 @@
+/var/www/html/PDV/Dominio/bin/Debug/net5.0/Dominio.deps.json
+/var/www/html/PDV/Dominio/bin/Debug/net5.0/Dominio.dll
+/var/www/html/PDV/Dominio/bin/Debug/net5.0/ref/Dominio.dll
+/var/www/html/PDV/Dominio/bin/Debug/net5.0/Dominio.pdb
+/var/www/html/PDV/Dominio/obj/Debug/net5.0/Dominio.csproj.AssemblyReference.cache
+/var/www/html/PDV/Dominio/obj/Debug/net5.0/Dominio.GeneratedMSBuildEditorConfig.editorconfig
+/var/www/html/PDV/Dominio/obj/Debug/net5.0/Dominio.AssemblyInfoInputs.cache
+/var/www/html/PDV/Dominio/obj/Debug/net5.0/Dominio.AssemblyInfo.cs
+/var/www/html/PDV/Dominio/obj/Debug/net5.0/Dominio.csproj.CoreCompileInputs.cache
+/var/www/html/PDV/Dominio/obj/Debug/net5.0/Dominio.dll
+/var/www/html/PDV/Dominio/obj/Debug/net5.0/ref/Dominio.dll
+/var/www/html/PDV/Dominio/obj/Debug/net5.0/Dominio.pdb

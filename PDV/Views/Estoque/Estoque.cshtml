@@ -1,0 +1,63 @@
+@model IEnumerable<Dominio.Entidades.Produto>
+@{
+  Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/estoque.css">
+    <script src="https://kit.fontawesome.com/d6011287c4.js" crossorigin="anonymous"></script>
+    <title>Estoque</title>
+</head>
+<body>
+    <div id="menu">
+        <i class="fas fa-user-circle fa-lg" id="user"></i><span>   Usuario</span>
+    </div>  
+    <div id="menula">
+        <ul id="itemMenu">
+          <li id="menulaLi">
+            <a asp-controller="Venda" asp-action="Venda" style="color: black;">
+              <i class="fas fa-money-check-alt fa-lg" id="venda" title="Venda"></i>
+            </a>     
+          </li>
+          <li id="menulaLi">
+            <a asp-controller="Estoque" asp-action="Estoque" style="color: black;">
+              <i class="fas fa-truck-loading fa-lg" id="estoque" title="Estoque"></i>
+            </a>
+          </li>
+        </ul>
+    </div>
+    <div id="informacaoEstoque">
+      <a asp-controller="Produto" asp-action="Produto"><button type="button" class="btn btn-secondary" id="addProd" >
+        <i class="fas fa-plus fa-sm"></i>  Adicionar produto</button></a>
+      <table style="width:80%" id="cabecalhoProd">
+          <thead>
+            <tr id="cabeçalho">
+              <th>Código</th>
+              <th>Produto</th>
+              <th>Valor unitário</th>
+              <th>Quantidade</th>
+              <th>Opções</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                  <td>@item.Id</td>
+                  <td>@item.Nome</td>
+                  <td >@item.ValorUnitario</td>
+                  <td>@item.Quantidade</td>
+                  <td>
+                   <a href="/Produto/Editar/@item.Id"><i class="fas fa-pencil-alt" title="Editar"> </i></a>
+                   <a href="/Produto/Excluir/@item.Id" id="trash"><i class="fas fa-trash-alt" title="Excluir" id="trash"></i></a>
+                  </td>
+                </tr>
+            }
+          </tbody>
+    </div>
+</body>
+</html>

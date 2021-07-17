@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/login.css">
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <title>PDV</title>
+</head>
+<body style="background-color: dodgerblue;">
+    <div class="login">
+        <label id="titulo">Sistema de vendas</label>
+        <br>
+        <label id="login">Login</label>
+        <br>
+        <input type="text" maxlength="20" placeholder="Login">
+        <br>
+        <label id="senha">Senha</label>
+        <br>
+        <input type="password" id="password" maxlength="20" placeholder="Senha">
+        <br>
+        <br>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Venda" asp-action="Venda"><button type="button" class="btn btn-primary">Login</button></a>
+    </div>
+</body>
+</html>

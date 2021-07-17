@@ -1,0 +1,103 @@
+@{
+  Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="~/css/index.css">
+    <link rel="stylesheet" href="~/css/index.css">
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/d6011287c4.js" crossorigin="anonymous"></script>
+    <title>PDV</title>
+</head>
+<body>
+    <div id="menu">
+        <i class="fas fa-user-circle fa-lg" id="user"></i><span>  Usuario</span>
+    </div>
+    <div id="menula">
+      <ul id="itemMenu">
+        <li id="menulaLi">
+          <a asp-area="" asp-controller="Venda" asp-action="Venda" style="color: black;">
+            <i class="fas fa-money-check-alt fa-lg" id="venda" title="Venda"></i>
+          </a>     
+        </li>
+        <li id="menulaLi">
+          <a asp-area="" asp-controller="Estoque" asp-action="Estoque" style="color: black;">
+            <i class="fas fa-truck-loading fa-lg" id="estoque" title="Estoque"></i>
+          </a>
+        </li>
+      </ul>
+  </div>
+    <div id="telaVenda">    
+      <div id="prod">
+      <p>Código do produto</p>
+      <div class="input-group mb-3" >
+        <input type="text" id="codProd">
+        
+          <button class="btn btn-outline-secondary" type="button" id="codSearch" asp-action="Buscar" asp-controller="Venda"><i class="fas fa-search"></i></button>
+      
+      </div>
+      <!--<form asp-action="Buscar" asp-controller="Venda" method="POST">!-->
+      <div>
+        <ul id="InfoProd">
+          <li id="infoProd">
+            <p id="Qtd">Quantidade</p>
+            <input type="text" id="qtd">
+          </li>
+          <li id="infoProd">
+            <p style="text-align: left; margin-left: 10px;">Valor unitário</p>
+            <input type="text" id="valorUni">
+          </li>
+          <li id="infoProd">
+            <p style="text-align: left; margin-left: 10px;">Valor Total</p>
+            <input type="text" onfocus="valorTotal()" id="valorTot">
+          </li>
+        </ul>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="ItemList()" id="add">Adicionar item</button>
+      </div>
+      <textarea id="listaProd" cols="30" rows="10"></textarea>
+    </div>  
+
+    <button type="button" class="btn btn-success" id="buy" onclick="openModal('dv-modal')">Finalizar compra</button>
+    <button type="button" class="btn btn-danger" id="cancel">Cancelar compra</button>
+
+    <div id="dv-modal" class="modal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h1>Pagamento</h1>
+          </div>
+
+          <div class="modal-body">
+              
+              <label>Valor Total (R$)</label>
+              <input type="number" placeholder="0,00"> </input>             
+              <label>Forma de Pagamento</label>
+              <select name="payform" id="payform">
+                <option value="Dinheiro">Dinheiro</option>
+                <option value="Card">Cartão de crédito</option>
+                <option value="Debit card">Cartão de débito</option>
+                <option value="Check">Cheque</option>
+              </select>
+              <label>Parcelas</label>
+              <input type="number" placeholder="0,00"> </input>
+              <label>Valor Recebido (R$)</label>
+              <input type="number" placeholder="0,00"> </input>
+              <label>Troco (R$)</label>
+              <input type="number" placeholder="0,00"> </input>
+          </div>
+
+          <div class="modal-footer">
+              <button type="button" class="btn btn-success" id="pay" onclick="closeModal('dv-modal')">Concluir</button>
+          </div>
+      </div>
+  </div>
+
+  <script src="~/js/script.js"></script>
+      
+
+  </body>
+</html>

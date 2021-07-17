@@ -1,0 +1,52 @@
+@model Dominio.Entidades.Produto
+@{
+  Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/produto.css">
+    <script src="https://kit.fontawesome.com/d6011287c4.js" crossorigin="anonymous"></script>
+    <title>Estoque</title>
+</head>
+<body>
+    <div id="menu">
+        <i class="fas fa-user-circle fa-lg" id="user"></i><span>   Usuario</span>
+    </div>  
+    <div id="menula">
+        <ul id="itemMenu">
+          <li id="menulaLi">
+            <a asp-controller="Venda" asp-action="Venda" style="color: black;">
+              <i class="fas fa-money-check-alt fa-lg" id="venda" title="Venda"></i>
+            </a>     
+          </li>
+          <li id="menulaLi">
+            <a asp-controller="Estoque" asp-action="Estoque" style="color: black;">
+              <i class="fas fa-truck-loading fa-lg" id="estoque" title="Estoque"></i>
+            </a>
+          </li>
+        </ul>
+    </div>  
+    <div id="main">
+      <form asp-action="Produto" asp-controller="Produto" method="POST">
+        <div>
+            <input type="hidden" class="form-control" asp-for="Id"></input>             
+            <label for="Nome">Nome</label>
+            <input type="text" asp-for="Nome" required></input>
+            <label for="Quantidade">Quantidade</label>
+            <input type="number" asp-for="Quantidade" required> </input>
+            <label for="ValorUnitario">Valor unitário (R$)</label>
+            <input type="number" placeholder="0,00"  asp-for="ValorUnitario" required> </input>
+        </div>
+
+        <div id="mainfooter">
+            <button class="btn btn-primary">Salvar</button>
+            <button class="btn btn-secondary" onclick="history.go(-1)">Voltar</button>
+        </div>
+      </form>
+    </div>
+</body>
+</html>

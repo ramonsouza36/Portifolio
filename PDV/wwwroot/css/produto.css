@@ -1,0 +1,71 @@
+#menula{
+    width: 60px;
+    height:620px;
+    background-color: dodgerblue;
+    margin-top: -4%;
+}
+#menu{
+    width: 100%;
+    height:50px;
+    background-color: dodgerblue;
+    margin-top: 0px;
+}
+
+#user{
+    color:white;
+    height: 30px;
+    margin-top: 10px;
+    background-color: dodgerblue;
+    margin-left: 90%;
+}
+#itemMenu{
+    background-color: dodgerblue;
+    margin-left: -40px;
+    margin-top: 50px;
+    height: 30px;
+    left: -10px;
+    list-style: none;
+}
+#menulaLi{
+    margin-top: 10px;
+    padding-top: 23px;
+    width: 57px;
+    height: 60px;
+    margin-left: 8px;
+}
+#venda{
+    width: 60px;
+    height: 60px;
+    padding-left: 15px;
+    padding-top: 23px;
+}
+#venda:hover{
+    background-color: gold;
+}
+
+#estoque:hover{
+    background-color: gold;
+}
+
+#estoque{
+    width: 60px;
+    height: 60px;
+    padding-left: 15px;
+    padding-top: 23px;
+}
+
+label{
+    margin-left: 5vh;
+    margin-bottom: 2vh;
+}
+input{
+    left: 100px;
+}
+#main{
+    margin-top: -45%;
+    margin-left: 3%;
+}
+#mainfooter{
+    margin-top: 20px;
+    margin-left: 40px;
+}

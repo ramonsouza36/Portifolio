@@ -1,0 +1,31 @@
+body{
+    background-color: dodgerblue;
+}
+.login{
+    width: 400px;
+    height: 250px;
+    background-color:lightgray;
+    margin-top: 200px;
+    margin-left: 400px;
+    border-radius: 5%;
+    text-align: center;
+}
+
+#titulo{
+    font-size: 25px;
+}
+#login{
+    font-size: 20px;
+}
+#senha{
+    font-size: 20px;
+}
+input{
+    margin-bottom: 10px;
+}
+
+button{
+    margin: 10px;
+    left: 300px;
+    
+}

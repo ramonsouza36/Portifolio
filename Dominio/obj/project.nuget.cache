@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "UWt18aEpLTuTtvv3I+WDPGx3hEM4tQZBs+0fjV+VbO5xkzM3ogmiWqP2D4oV3TeZhUEHFnIjc0D8KA8gX9h9ew==",
+  "success": true,
+  "projectFilePath": "/var/www/html/PDV/Dominio/Dominio.csproj",
+  "expectedPackageFiles": [
+    "/home/ramon/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "/home/ramon/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

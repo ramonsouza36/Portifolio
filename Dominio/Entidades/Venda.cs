@@ -13,8 +13,6 @@ namespace Dominio.Entidades
 
         public string FormaPagamento { get; set; }
 
-        public int Parcelas { get; set; } 
-
-        public virtual ICollection<ItensVendas> ItensVendas { get; set; }       
+        public int Parcelas { get; set; }       
     }
 }

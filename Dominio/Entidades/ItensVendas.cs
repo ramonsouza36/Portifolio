@@ -12,8 +12,5 @@ namespace Dominio.Entidades
 
         public float ValorUnitario {get; set; }
 
-        public virtual Produto produto { get; set; }
-
-        public virtual Venda venda { get; set; } 
     }
 }

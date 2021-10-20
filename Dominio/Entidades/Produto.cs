@@ -11,7 +11,6 @@ namespace Dominio.Entidades
         public float ValorUnitario { get; set; }
 
         public int Quantidade { get; set; }
-
-        public virtual ICollection<ItensVendas> ItensVendas { get; set; }
+        
     }
 }

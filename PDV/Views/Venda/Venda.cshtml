@@ -1,3 +1,4 @@
+@model Dominio.Entidades.CompraViewModel
 @{
   Layout = null;
 }
@@ -32,24 +33,22 @@
       </ul>
   </div>
     <div id="telaVenda">    
+      <form asp-action="ItensVenda" asp-controller="Venda" method="POST"> 
       <div id="prod">
       <p>Código do produto</p>
       <div class="input-group mb-3" >
-        <input type="text" id="codProd">
-        
-          <button class="btn btn-outline-secondary" type="button" id="codSearch" asp-action="Buscar" asp-controller="Venda"><i class="fas fa-search"></i></button>
-      
+        <input type="text" id="codProd" asp-for ="Item">
+          <button class="btn btn-outline-secondary" asp-action="Buscar" asp-controller="Venda" type="button" id="codSearch"><i class="fas fa-search"></i></button>
       </div>
-      <!--<form asp-action="Buscar" asp-controller="Venda" method="POST">!-->
       <div>
         <ul id="InfoProd">
           <li id="infoProd">
             <p id="Qtd">Quantidade</p>
-            <input type="text" id="qtd">
+            <input type="number" id="qtd" asp-for ="Quantidade">
           </li>
           <li id="infoProd">
             <p style="text-align: left; margin-left: 10px;">Valor unitário</p>
-            <input type="text" id="valorUni">
+            <input type="Number" id="valorUni" asp-for ="ValorUnitario">
           </li>
           <li id="infoProd">
             <p style="text-align: left; margin-left: 10px;">Valor Total</p>
@@ -57,42 +56,56 @@
           </li>
         </ul>
         <br>
-        <button type="button" class="btn btn-primary" onclick="ItemList()" id="add">Adicionar item</button>
+        <button class="btn btn-primary" id="add">Adicionar item</button>
       </div>
-      <textarea id="listaProd" cols="30" rows="10"></textarea>
+      <div id="listaProd" cols="30" rows="10">
+          <table style="width:80%" id="cabecalhoProd">
+            <thead>
+              <tr id="cabeçalho">
+                <th>Código</th>
+                <th>Valor unitário</th>
+                <th>Quantidade</th>
+                <th>Valor Total</th>
+              </tr>
+            </thead>
+          </table>
+      </div>
+      </form>
     </div>  
 
     <button type="button" class="btn btn-success" id="buy" onclick="openModal('dv-modal')">Finalizar compra</button>
     <button type="button" class="btn btn-danger" id="cancel">Cancelar compra</button>
 
     <div id="dv-modal" class="modal">
+      <form asp-action="Venda" asp-controller="Venda" method="POST"> 
       <div class="modal-content">
           <div class="modal-header">
               <h1>Pagamento</h1>
           </div>
 
           <div class="modal-body">
-              
               <label>Valor Total (R$)</label>
-              <input type="number" placeholder="0,00"> </input>             
+              <input type="number" placeholder="0,00" asp-for = "ValorTotal" id="total"> </input>             
               <label>Forma de Pagamento</label>
-              <select name="payform" id="payform">
+              <select asp-for = "FormaPagamento">
                 <option value="Dinheiro">Dinheiro</option>
                 <option value="Card">Cartão de crédito</option>
                 <option value="Debit card">Cartão de débito</option>
                 <option value="Check">Cheque</option>
               </select>
               <label>Parcelas</label>
-              <input type="number" placeholder="0,00"> </input>
+              <input type="number" placeholder="0,00" asp-for ="Parcelas"> </input>
               <label>Valor Recebido (R$)</label>
-              <input type="number" placeholder="0,00"> </input>
+              <input type="number" placeholder="0,00" id="recebido"> </input>
               <label>Troco (R$)</label>
-              <input type="number" placeholder="0,00"> </input>
+              <input type="text" placeholder="0,00" id="troco" onfocus="CalcTroco()"> </input>
           </div>
 
           <div class="modal-footer">
-              <button type="button" class="btn btn-success" id="pay" onclick="closeModal('dv-modal')">Concluir</button>
+            <button type="button" class="btn btn-secondary" onclick="closeModal('dv-modal')">Voltar</button>
+              <button class="btn btn-primary">Concluir</button>
           </div>
+          </form>
       </div>
   </div>
 

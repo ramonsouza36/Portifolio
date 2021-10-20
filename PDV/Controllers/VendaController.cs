@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,26 +25,39 @@ namespace PDV.Controllers
             return View();
         }
 
-       /* [HttpPost]
-        public async Task<IActionResult> Venda(Produto produtos)
-        {
-            if(produtos.Id ==0){
-            _context.Produtos.Add(produtos);
-            }
-            else {
-                var produto = _context.Produtos.First(p => p.Id == produtos.Id);
-                produto.Nome = produtos.Nome;
-                produto.Quantidade = produtos.Quantidade;
-                produto.ValorUnitario = produtos.ValorUnitario;
-            }
+        [HttpPost]
+        public async Task<IActionResult> Venda(Venda venda){
+            venda.dataVenda = DateTime.Now;
+            _context.Add(venda);
             await _context.SaveChangesAsync();
             return Redirect("https://localhost:5001/Venda/Venda");
+        }
 
-        }*/
-        public Produto Buscar(int id)
+        [HttpPost]
+        public async Task<IActionResult> ItensVenda(ItensVendas itemvenda){
+            
+            var Codigo = _context.Vendas.Max( v => v.Id);
+            Codigo = Codigo +1;
+            itemvenda.CodigoVenda = Codigo;
+            _context.ItensVendas.Add(itemvenda);
+            await _context.SaveChangesAsync();
+            return Redirect("https://localhost:5001/Venda/Venda");
+        }
+
+        public int Codigo()
         {
-            var produto = _context.Produtos.First(p => p.Id == id);
-            return produto;
+            var Codigo = _context.Vendas.Max( v => v.Id);
+            Codigo = Codigo +1;
+            return Codigo;
+        }
+
+        [HttpGet]
+        public IActionResult Buscar(int id)
+        {
+            var Codigo = _context.Vendas.Max( v => v.Id);
+            Codigo = Codigo +1;
+            var itens = _context.ItensVendas.Where( i => i.CodigoVenda == Codigo);
+            return View(itens.ToList());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

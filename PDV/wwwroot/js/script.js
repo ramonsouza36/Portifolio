@@ -37,3 +37,8 @@ function ItemList(){
     document.getElementById("valorUni").value=item;
     document.getElementById("valorTot").value=item;  
 }
+
+function CalcTroco(){
+    var troco = document.getElementById("recebido").value - document.getElementById("total").value;
+    document.getElementById("troco").value = parseFloat(troco).toFixed(2);;
+}

@@ -1,2 +1,2 @@
 # Portifolio
-Repositório dedicado para portifólio e modelos de sites feitos por mim
+Repositório dedicado para programas com fim de aprendizado

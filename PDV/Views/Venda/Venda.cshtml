@@ -59,16 +59,7 @@
         <button class="btn btn-primary" id="add">Adicionar item</button>
       </div>
       <div id="listaProd" cols="30" rows="10">
-          <table style="width:80%" id="cabecalhoProd">
-            <thead>
-              <tr id="cabeçalho">
-                <th>Código</th>
-                <th>Valor unitário</th>
-                <th>Quantidade</th>
-                <th>Valor Total</th>
-              </tr>
-            </thead>
-          </table>
+          @Html.Partial("_ItensCompra")
       </div>
       </form>
     </div>  

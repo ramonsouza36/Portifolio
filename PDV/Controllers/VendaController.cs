@@ -44,6 +44,11 @@ namespace PDV.Controllers
             return Redirect("https://localhost:5001/Venda/Venda");
         }
 
+        public Task<IActionResult> Compra(int Id){
+            var itemVenda = _context.ItensVendas.ToList(in => i.CodigoVenda = Id);
+            return itemVenda;
+        }
+
         public int Codigo()
         {
             var Codigo = _context.Vendas.Max( v => v.Id);

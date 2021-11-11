@@ -1,4 +1,4 @@
-@model Dominio.Entidades.ItensVendas
+@model IEnumerable <Dominio.Entidades.ItensVendas>
 <table style="width:80%" id="cabecalhoProd">
     <thead>
         <tr id="cabeçalho">
@@ -8,4 +8,15 @@
             <th>Valor Total</th>
         </tr>
     </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CodigoVenda</td>
+                <td>@item.Item</td>
+                <td>@item.ValorUnitario</td>
+                <td>@item.Quantidade</td>
+            </tr>
+        }
+    </tbody>
 </table>
